@@ -1,0 +1,38 @@
+select ID, Name , Phone from Account
+select id, Name, Project_Name__c, status__c from Salesforce_Project__c
+select ID, Name , mailingcity  from contact where mailingcity = 'Paris' 
+// mailingcity si paris olani getirmek icin
+// != ifadesi paris oolmayan icin 
+
+// wild card %
+// 'A%' -->  starts A
+// '%A '-->  ends  A
+// '%A%'  --> contains A 
+// like keyword u kullanilir 
+
+select ID, Name , mailingcity  from contact where name like  '%Ab% '  
+// icerisinde Ab iceren isimleri getir
+
+// nulls last = ifadesi null lari en sona almak icin kullanilir.
+
+//use ORDER BY fieldName
+// siralama icin kullanilir
+
+select id, name, phone, active__c from account order by name desc
+
+select id, name, phone, active__c, createddate from account order by createddate desc
+
+select id, name, phone, active__c, createddate from account order by createddate desc limit 3
+
+//usage of !=
+select id, name, project_name__c, status__c from salesforce_project__c where status__c != 'New'
+
+//and or 
+// and or kullanmak zorunda oldugumuzda direk yaziyoruz ve parantez icerisinde olmasi gerekiyor eger or ve and ayni zamanda kullanilirsa.
+
+select id, name, phone , accountNumber, website from account where (phone != null or website != null) and accountnumber != null
+
+select id, priority__c, status__c, subject__c  from Salesforce_Ticket__c where Status__c != '' and Priority__c = 'high'
+
+
+

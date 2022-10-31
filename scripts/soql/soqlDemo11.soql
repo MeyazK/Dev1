@@ -1,0 +1,5 @@
+//first create a soql file with .soql and then ctrl+shift+p --->
+// 
+select ID, Name , Phone from Account
+
+select id , name , project_name__c from Salesforce_Project__c where status__c = 'new'

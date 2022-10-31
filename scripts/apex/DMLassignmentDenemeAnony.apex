@@ -1,0 +1,2 @@
+DMLassignmentDeneme.insertSomeWords();
+DMLassignmentDeneme.updateSomeWords();
