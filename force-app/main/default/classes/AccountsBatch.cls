@@ -1,3 +1,6 @@
+
+// also getting statistics using stateful
+
 public class AccountsBatch  implements Database.Batchable<SObject> , Database.stateful{
     integer numberOfRecords=0;
     integer count =0;
@@ -11,7 +14,7 @@ public class AccountsBatch  implements Database.Batchable<SObject> , Database.st
                                        // bu sekilde bir query de yapilabilir bu method sayesinde
         return ql;
     } 
-
+    //update dml happening in execute method.
     public void execute(Database.BatchableContext bc, List<account> scope){
         system.debug('execute method running.');
         //dmls
@@ -20,7 +23,7 @@ public class AccountsBatch  implements Database.Batchable<SObject> , Database.st
         }
         update scope;
     }
-
+    // finish method called once all records are processed
     public void finish(Database.BatchableContext bc){
         system.debug('finish method executed.Batch done.');
     }
