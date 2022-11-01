@@ -5,6 +5,7 @@ trigger ContactTrigger on Contact (before insert, after insert, before update, a
         ContactTriggerHandler1.contactUpdateValidation2(Trigger.New, Trigger.Old,  Trigger.NewMap, Trigger.OldMap);
   
     }
+    //
     if (Trigger.isAfter) {
         //call handler method.
         ContactTriggerHandler1.updateAccNumberOfContacts(Trigger.New, Trigger.Old);
