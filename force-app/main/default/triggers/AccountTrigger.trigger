@@ -270,6 +270,12 @@ trigger AccountTrigger on account (before insert,before update,after insert,afte
 
 */
 trigger AccountTrigger on account (before insert,before update,after insert,after update) {
+    TriggerSwitch__c accountSwitch =TriggerSwitch__c.getInstance('account');
+    if (accountSwitch.switch__c==false) {
+        return;
+    }
+
+
     system.debug('====trigger start======');
     if (trigger.isBefore) {
         AccountTriggerHandler.updateDescription(Trigger.new, trigger.old, trigger.newMap, trigger.oldMap);

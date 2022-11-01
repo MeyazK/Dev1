@@ -25,6 +25,7 @@ public class AccountsBatch  implements Database.Batchable<SObject> , Database.st
     }
     // finish method called once all records are processed
     public void finish(Database.BatchableContext bc){
+        
         system.debug('finish method executed.Batch done.');
     }
 }
